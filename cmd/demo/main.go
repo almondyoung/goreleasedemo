@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/almondyoung/goreleasedemo/cmd"
 	"github.com/spf13/cobra"
 )
 
@@ -26,6 +27,7 @@ func main() {
 	greetCmd.Flags().StringP("name", "n", "", "Name of the person to greet")
 
 	rootCmd.AddCommand(greetCmd)
+	rootCmd.AddCommand(cmd.NewVersionCmd())
 
 	rootCmd.Execute()
 }
